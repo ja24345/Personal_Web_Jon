@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jonathan Alvarado's Web Page : Personal Projects</title> 
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #3d3a3a;
+        }
+    </style>
+</head>
+<body>
+    <div id="cover"> 
+        <header>
+            <a href="index.html"><h1>Jonathan Alvarado's Web Page</h1></a>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="AboutMe.html">About Me</a></li>
+                <li><a href="Work_Experience.html">Work Experience</a></li>
+                <li><a href="Personal_projects.html">Personal Projects</a></li>
+                <li><a href="Future_projects.html">Future Projects</a></li>
+                <li><a href="Contact_info.html">Contact Info</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <h2>Projects I've Worked On</h2>
+            
+            <p>During my free time, I have a number of hobbies that I like to work on when I'm not busy. Some of these include computer building, painting, and more. I have also started my 5 Gallon aquarium tank, and hand made my own Halloween Costume last year.</p>
+
+            <div class="image-gallery">
+                <div id="personalimg"></div>
+                <div id="tank"></div>
+                <div id="costume"></div>
+            </div>
+            
+            <h2>Most Recent</h2>
+            <p>Most recently, I have just completed my 4th PC build. The specs include:</p>
+
+            <table id="pc-specs-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Specification</th>
+                    </tr>
+                </thead>
+                <tbody id="specs-body">
+                </tbody>
+            </table>
+        </main>
+
+        <footer>
+            <i><small>
+                Copyright &copy; 2026 Jonathan Alvarado's Website <br>
+                <a href="mailto:ja24345@georgiasouthern.edu">ja24345@georgiasouthern.edu</a>
+            </small></i>
+        </footer>
+    </div>
+
+    <script>
+        function renderPcSpecs() {
+            const specs = [
+                { component: "CPU", detail: "Ryzen 7 7700X" },
+                { component: "GPU", detail: "AMD 9070XT" },
+                { component: "Memory", detail: "32 GB DDR5 7200 MT/s" },
+                { component: "Storage", detail: "1 TB SSD + 1 TB SSD" },
+                { component: "Power Supply", detail: "750 W" },
+                { component: "CPU Cooler", detail: "360mm AIO" },
+                { component: "Motherboard", detail: "B650" }
+            ];
+
+            const tableBody = document.getElementById('specs-body');
+          
+            specs.forEach(function(item) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td><strong>${item.component}</strong></td>
+                    <td>${item.detail}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        window.onload = renderPcSpecs;
+    </script>
+</body>
+</html>
